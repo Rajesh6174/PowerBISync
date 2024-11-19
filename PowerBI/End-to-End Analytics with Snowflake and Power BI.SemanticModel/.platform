@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "End-to-End Analytics with Snowflake and Power BI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5a6de6b8-ccaf-4d0a-b1f3-5337efb45a69"
+  }
+}

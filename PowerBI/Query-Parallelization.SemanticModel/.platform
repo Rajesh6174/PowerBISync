@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Query-Parallelization"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bff1fecd-f7bc-458e-8ccf-c7905e0544a9"
+  }
+}

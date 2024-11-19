@@ -1,0 +1,497 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.137.1102.0 (24.10)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DT_FACT_ORDER_AGG\",\"DT_DIM_CUSTOMER\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "AutoDetected_733408a1-0612-4aae-95ca-6c8e379cea11",
+        "fromColumn": "CUSTOMER_ID",
+        "fromTable": "DT_FACT_ORDER_AGG",
+        "toColumn": "CUSTOMER_ID",
+        "toTable": "DT_DIM_CUSTOMER"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "DT_FACT_ORDER_AGG",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "TRUCK_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "454b1cbb-9998-4d9f-8e80-1c3f5b68f807",
+            "sourceColumn": "TRUCK_ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "FRANCHISE_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "70a50483-18f7-4e91-b1e8-90824f1790ae",
+            "sourceColumn": "FRANCHISE_ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "LOCATION_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6b9c5ae8-fd5c-4894-9bb0-5be8f0d051d5",
+            "sourceColumn": "LOCATION_ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "CUSTOMER_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "96eed44c-5979-446e-ab64-987908ec2174",
+            "sourceColumn": "CUSTOMER_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DATE_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8c048222-97ae-4816-a625-ea09eb59ca18",
+            "sourceColumn": "DATE_ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "ORDER_COUNT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d63b3b13-2abc-48e4-b1a2-aa62256e93f5",
+            "sourceColumn": "ORDER_COUNT",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ORDER_LINE_COUNT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "384b0225-e29b-4568-8af7-f2e7d6a0d630",
+            "sourceColumn": "ORDER_LINE_COUNT",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ORDER_QTY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6e70a7e7-a793-4fa9-bc9c-4bbdc513175d",
+            "sourceColumn": "ORDER_QTY",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ORDER_TOTAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0861a1e2-328d-4666-b4fb-cf2edeee2f8a",
+            "sourceColumn": "ORDER_TOTAL",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "c99b9c3c-4d13-4e97-aa07-27c7d14dba74",
+        "partitions": [
+          {
+            "name": "DT_FACT_ORDER_AGG",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Snowflake.Databases(\"edtoxkt-tj49036.snowflakecomputing.com\",\"COMPUTE_WH\"),",
+                "    TB_101_Database = Source{[Name=\"TB_101\",Kind=\"Database\"]}[Data],",
+                "    POWERBI_Schema = TB_101_Database{[Name=\"POWERBI\",Kind=\"Schema\"]}[Data],",
+                "    DT_FACT_ORDER_AGG_Table = POWERBI_Schema{[Name=\"DT_FACT_ORDER_AGG\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    DT_FACT_ORDER_AGG_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DT_DIM_CUSTOMER",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CUSTOMER_ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f6607f22-3018-479c-9942-87e2b9d1b117",
+            "sourceColumn": "CUSTOMER_ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_FIRST_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4e9ce6d0-d7fd-4a02-a425-e06ab864be4e",
+            "sourceColumn": "CUSTOMER_FIRST_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_LAST_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "088b6e89-6de2-4dcf-a1c6-742236844241",
+            "sourceColumn": "CUSTOMER_LAST_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_FULL_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a411c5a4-cbfe-4645-ba15-106bf4d708e8",
+            "sourceColumn": "CUSTOMER_FULL_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_LAST_FIRST_NAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3a349530-bb06-4deb-bf7c-012fe6bb3892",
+            "sourceColumn": "CUSTOMER_LAST_FIRST_NAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_CITY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f7e771eb-02bd-4bf5-94a5-5743acb2ab28",
+            "sourceColumn": "CUSTOMER_CITY",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_COUNTRY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ad74dbd4-ee3e-4dbb-b571-f058633fe2d3",
+            "sourceColumn": "CUSTOMER_COUNTRY",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_POSTAL_CODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f1d288fe-5730-47a3-934e-cc356a9068d2",
+            "sourceColumn": "CUSTOMER_POSTAL_CODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_PREFERRED_LANGUAGE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ebd73840-9590-464b-8f60-be03466b622c",
+            "sourceColumn": "CUSTOMER_PREFERRED_LANGUAGE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_GENDER",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1c9c4e90-6b68-4d2c-86bb-bd09b0d1f113",
+            "sourceColumn": "CUSTOMER_GENDER",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_FAVORITE_BAND",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "52905bd5-22c6-40a3-9a70-752641c4cdc3",
+            "sourceColumn": "CUSTOMER_FAVORITE_BAND",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_MARITAL_STATUS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b0a9e50b-ab1a-4e0e-914b-b0ddc424192e",
+            "sourceColumn": "CUSTOMER_MARITAL_STATUS",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_CHILDREN_COUNT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1bc161f0-4c47-48d6-84c8-444ff32aab81",
+            "sourceColumn": "CUSTOMER_CHILDREN_COUNT",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_SIGNUP_DATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "1b3e60aa-b1b8-486e-a467-38fd43d8e6db",
+            "sourceColumn": "CUSTOMER_SIGNUP_DATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_DOB",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "d59ca7dc-987e-4166-b8fa-3275f295ada7",
+            "sourceColumn": "CUSTOMER_DOB",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_EMAIL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0362de6f-c66c-4423-8469-9b2595808eab",
+            "sourceColumn": "CUSTOMER_EMAIL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CUSTOMER_PHONE_NUMBER",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1413c44e-906f-49e8-ae98-0a57d3f2c4a9",
+            "sourceColumn": "CUSTOMER_PHONE_NUMBER",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "737a0ef9-fc33-4ed0-b78a-5e45b557f8a0",
+        "partitions": [
+          {
+            "name": "DT_DIM_CUSTOMER",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Snowflake.Databases(\"edtoxkt-tj49036.snowflakecomputing.com\",\"COMPUTE_WH\"),",
+                "    TB_101_Database = Source{[Name=\"TB_101\",Kind=\"Database\"]}[Data],",
+                "    POWERBI_Schema = TB_101_Database{[Name=\"POWERBI\",Kind=\"Schema\"]}[Data],",
+                "    DT_DIM_CUSTOMER_Table = POWERBI_Schema{[Name=\"DT_DIM_CUSTOMER\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    DT_DIM_CUSTOMER_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

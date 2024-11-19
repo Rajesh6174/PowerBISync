@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "End-to-End Analytics with Snowflake and Power BI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "511fb1af-1683-4e65-9b70-e290e37572a3"
+  }
+}

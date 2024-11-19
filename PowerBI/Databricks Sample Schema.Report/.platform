@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Databricks Sample Schema"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "520a3068-c020-4554-b3ff-75da62654b8b"
+  }
+}

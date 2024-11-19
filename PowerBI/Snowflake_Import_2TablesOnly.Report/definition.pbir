@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Snowflake_Import_2TablesOnly.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

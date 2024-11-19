@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.59\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "c71611341b8202109d28",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"bacd7b7ab67794b4db8a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.730538922155688,\"y\":0,\"z\":0,\"width\":1068.4550898203593,\"height\":567.185628742515,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DT_DIM_CUSTOMER.CUSTOMER_GENDER\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(DT_FACT_ORDER_AGG.ORDER_QTY)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DT_DIM_CUSTOMER\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DT_FACT_ORDER_AGG\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CUSTOMER_GENDER\"},\"Name\":\"DT_DIM_CUSTOMER.CUSTOMER_GENDER\",\"NativeReferenceName\":\"CUSTOMER_GENDER\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"ORDER_QTY\"}},\"Function\":0},\"Name\":\"Sum(DT_FACT_ORDER_AGG.ORDER_QTY)\",\"NativeReferenceName\":\"Sum of ORDER_QTY\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"ORDER_QTY\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 567.19,
+          "width": 1068.46,
+          "x": 10.73,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

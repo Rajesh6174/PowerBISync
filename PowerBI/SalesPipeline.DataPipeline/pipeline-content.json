@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "OnlineSalesActivity",
+        "type": "RefreshDataflow",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "dataflowId": "0abd4bf3-05fe-45c4-ae23-d1f5d9ee3474",
+          "workspaceId": "b5b2f2c8-ac06-44be-8ef7-527fcab135a1",
+          "notifyOption": "NoNotification"
+        }
+      },
+      {
+        "name": "Mail on failure",
+        "type": "Office365Outlook",
+        "dependsOn": [
+          {
+            "activity": "OnlineSalesActivity",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "inputs": {
+            "method": "post",
+            "path": "/v2/Mail",
+            "body": {
+              "To": "rajeshkumarvanam@gmail.com",
+              "Subject": "Pipeline failure",
+              "Body": "@concat(\n    'Pipeline: '\n    , pipeline().Pipeline\n    , '<br>'\n    , 'Workspace: '\n    , pipeline().DataFactory\n    , '<br>'\n    , 'Time: '\n    , utcNow()\n)",
+              "Sensitivity": "",
+              "Importance": "Normal"
+            }
+          }
+        }
+      }
+    ],
+    "logicAppsConnectionPayload": {
+      "id": "/subscriptions/65a7b1cc-8495-4fba-85f5-4f037072c0cf/resourceGroups/connections-b5b2f2c8-ac06-44be-8ef7-527fcab135a1/providers/Microsoft.Web/connections/1_4b439df1-4486-49ae-9729-0ea81ad4fc89_a650566f-79ba-45c8-9a7a-ace399a08cc2",
+      "properties": {
+        "api": {
+          "name": "office365",
+          "id": "/subscriptions/65a7b1cc-8495-4fba-85f5-4f037072c0cf/providers/Microsoft.Web/locations/eastus/managedApis/office365"
+        }
+      }
+    }
+  }
+}

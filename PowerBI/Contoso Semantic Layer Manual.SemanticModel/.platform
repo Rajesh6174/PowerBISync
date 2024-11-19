@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Contoso Semantic Layer Manual"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ba093d24-eb53-426a-993d-d0e26883aaf8"
+  }
+}

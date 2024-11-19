@@ -1,0 +1,1386 @@
+{
+  "compatibilityLevel": 1569,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"HostName\",\"HttpPath\",\"orders\",\"lineitem\",\"part\",\"customer\",\"region\",\"nation\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.138.782.0 (24.11)"
+      },
+      {
+        "name": "__TEdtr",
+        "value": "1"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "dataSourceDefaultMaxConnections": 20,
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "HostName",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "expression": "\"adb-1995897682434209.9.azuredatabricks.net\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "935a4895-fd4f-4ded-a287-e9b8e3ec8024"
+      },
+      {
+        "name": "HttpPath",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "expression": "\"/sql/1.0/warehouses/504e56048d1cc76b\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "bac2a4e8-0f02-4a1e-aefb-9bf6e3872413"
+      }
+    ],
+    "maxParallelismPerQuery": 20,
+    "relationships": [
+      {
+        "name": "e109e2b3-9375-4109-89da-29b37940da8c",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "l_orderkey",
+        "fromTable": "lineitem",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "o_orderkey",
+        "toTable": "orders"
+      },
+      {
+        "name": "73c91ca6-1734-417e-ab9c-ef85fae6c8f0",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "l_partkey",
+        "fromTable": "lineitem",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "p_partkey",
+        "toTable": "part"
+      },
+      {
+        "name": "a10a5699-3c94-4c37-b218-f38eae18ee9d",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "n_regionkey",
+        "fromTable": "nation",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "r_regionkey",
+        "toTable": "region"
+      },
+      {
+        "name": "27fab088-b666-49b7-b620-39391476961d",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "c_nationkey",
+        "fromTable": "customer",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "n_nationkey",
+        "toTable": "nation"
+      },
+      {
+        "name": "6632f9f9-08a3-d50d-529f-a1e1a4b95966",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "o_custkey",
+        "fromTable": "orders",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "c_custkey",
+        "toTable": "customer"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "MeasuresTable",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "de631cc3c2bb4f13be018e4fb25c43d8"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "96996b20-7f96-4876-a553-584e6f2308d8",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "a30468de-0812-417d-bbb8-23cd7496d61a",
+        "measures": [
+          {
+            "name": "_SumTotalPrice",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUM(orders[o_totalprice])",
+            "lineageTag": "7506d913-9b58-4af3-b43e-e150079be9f3"
+          },
+          {
+            "name": "_TotalPrice01",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO BAG\")",
+            "lineageTag": "8ba2a302-b3e9-4292-bd50-f6a952a8e570"
+          },
+          {
+            "name": "_TotalPrice21",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"SM PACK\")",
+            "lineageTag": "4a1c60f9-35dd-4329-80f1-27d926474acc"
+          },
+          {
+            "name": "_TotalPrice10",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG BOX\")",
+            "lineageTag": "2623ab9b-9583-4950-af26-c676525fedf8"
+          },
+          {
+            "name": "_TotalPrice41",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"WRAP DRUM\")",
+            "lineageTag": "cbfaaaa7-df2c-44dd-913b-a54684408a3a"
+          },
+          {
+            "name": "_TotalPrice61",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED CASE\")",
+            "lineageTag": "32d53869-f507-4564-bd7d-23d278beb5ae"
+          },
+          {
+            "name": "_TotalPrice02",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO BOX\")",
+            "lineageTag": "56ccc8b0-a3b4-49fb-afea-c08ed57d4845"
+          },
+          {
+            "name": "_TotalPrice81",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED PACK\")",
+            "lineageTag": "71646710-de05-4f90-9a86-b675a8ec44e5"
+          },
+          {
+            "name": "_TotalPrice91",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED JAR\")",
+            "lineageTag": "2d25df02-69ea-45a1-be7d-db86245ddd7f"
+          },
+          {
+            "name": "_TotalPrice15",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG PACK\")",
+            "lineageTag": "03f13004-f370-425a-a232-2a3d4e793888"
+          },
+          {
+            "name": "_TotalPrice03",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO CAN\")",
+            "lineageTag": "a0b94781-2ef0-40ab-8628-b247d92470a2"
+          },
+          {
+            "name": "_TotalPrice04",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO CASE\")",
+            "lineageTag": "f602e592-1522-4a5d-934a-b55c6cc79b9a"
+          },
+          {
+            "name": "_TotalPrice05",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO DRUM\")",
+            "lineageTag": "573c1175-2d5b-42db-b8c2-731b5b0e0557"
+          },
+          {
+            "name": "_TotalPrice06",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO JAR\")",
+            "lineageTag": "0dcc1427-2e4b-499c-aaac-3ce0d67b9139"
+          },
+          {
+            "name": "_TotalPrice07",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO PACK\")",
+            "lineageTag": "cff2ca39-197c-4070-a02d-e4c82072bb03"
+          },
+          {
+            "name": "_TotalPrice08",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"JUMBO PKG\")",
+            "lineageTag": "36eb1649-57a2-4849-aa2a-1d93aa5ea794"
+          },
+          {
+            "name": "_TotalPrice09",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG BAG\")",
+            "lineageTag": "526b811f-84a3-446f-b7ef-839002f53e0b"
+          },
+          {
+            "name": "_TotalPrice11",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG CAN\")",
+            "lineageTag": "f3927a54-6d1d-413e-952a-d04d6a91cb8d"
+          },
+          {
+            "name": "_TotalPrice12",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG CASE\")",
+            "lineageTag": "e6b25cb0-4b3c-4151-b0e4-a9628b87914c"
+          },
+          {
+            "name": "_TotalPrice13",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG DRUM\")",
+            "lineageTag": "b117f665-74fd-4ad6-b38e-f349aeae02b4"
+          },
+          {
+            "name": "_TotalPrice14",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG JAR\")",
+            "lineageTag": "5f88a4c0-8c54-4f21-b26f-967843f93c13"
+          },
+          {
+            "name": "_TotalPrice16",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"LG PKG\")",
+            "lineageTag": "e679ed39-ff68-4116-bda8-aaa5c415140e"
+          },
+          {
+            "name": "_TotalPrice17",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED BAG\")",
+            "lineageTag": "6da0ac1a-b755-4094-9ea3-19d5eb3c6b4f"
+          },
+          {
+            "name": "_TotalPrice18",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED BOX\")",
+            "lineageTag": "594267e9-fede-459e-935e-e4c38dbc3ca2"
+          },
+          {
+            "name": "_TotalPrice19",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED CAN\")",
+            "lineageTag": "193d0f58-5c44-4d78-a21c-4a0ff5c66b18"
+          },
+          {
+            "name": "_TotalPrice20",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "CALCULATE([_SumTotalPrice], part[p_container]=\"MED CASE\")",
+            "lineageTag": "6498fd7c-8d1a-47cb-9087-6d3d5aec5538"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "MeasuresTable-26c28646-d65c-4bee-b0cf-d100487ebad2",
+            "mode": "import",
+            "source": {
+              "expression": "{BLANK()}",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "orders",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "o_orderkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "32d48bfb-6407-42b2-8991-2ad39847aa92",
+            "sourceColumn": "o_orderkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a824a497-e390-4243-8936-c2f51a4bcfd2",
+            "sourceColumn": "o_custkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_orderstatus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0110c722-72df-4941-bc1e-360c3f7fbfac",
+            "sourceColumn": "o_orderstatus",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_totalprice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "ac08ab19-7c74-4556-983a-98e35da32fad",
+            "sourceColumn": "o_totalprice",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_orderdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "899bffcd-6299-4bf2-aba6-5ba0e727a83c",
+            "sourceColumn": "o_orderdate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_orderpriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2c6b31ce-5b32-4907-8a24-19d4c7a2de6f",
+            "sourceColumn": "o_orderpriority",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_clerk",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fd63fbda-d114-4cd0-9b18-e2fd14c0b4cc",
+            "sourceColumn": "o_clerk",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_shippriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "90ae2a80-dd05-45e2-a13c-6a2639133912",
+            "sourceColumn": "o_shippriority",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5058d8a1-846b-4667-8493-b8f0e26ee59f",
+            "sourceColumn": "o_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "533c3ba2-14ae-4c54-87d1-fe8ee065db5f",
+        "partitions": [
+          {
+            "name": "orders",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(HostName, HttpPath, [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    orders_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "lineitem",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "l_orderkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "53b48b12-da27-4a05-a581-0057dfbe377b",
+            "sourceColumn": "l_orderkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_partkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "48927ff0-c854-4253-acff-f0d28cb80931",
+            "sourceColumn": "l_partkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_suppkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "427a4fc6-fc24-4b82-b724-161f76a8ccd3",
+            "sourceColumn": "l_suppkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "l_linenumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "196acaf5-19ef-4f33-8ccb-69905efb9491",
+            "sourceColumn": "l_linenumber",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "l_quantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dc134de2-c265-4e4d-8d6e-0256a5a90112",
+            "sourceColumn": "l_quantity",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "l_extendedprice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "875033cb-652b-4f95-aa4c-482e82b240f8",
+            "sourceColumn": "l_extendedprice",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "l_discount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "792c9f5f-9a6f-4efe-b447-dbaa43e6259f",
+            "sourceColumn": "l_discount",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "l_tax",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a69bcb73-1599-49b8-bd6d-6d9e2c360b3d",
+            "sourceColumn": "l_tax",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "l_returnflag",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9be972d9-d452-4f08-a493-6554ecbd2e54",
+            "sourceColumn": "l_returnflag",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_linestatus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a8edbe6a-c0b3-4480-81ad-668a06f5a74a",
+            "sourceColumn": "l_linestatus",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_shipdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "449a9d26-b3a6-4611-b203-5ff78c97c9f1",
+            "sourceColumn": "l_shipdate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_commitdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "83cc499c-8dac-4a14-b47e-f3e30c87653c",
+            "sourceColumn": "l_commitdate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_receiptdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "d40ffe07-72a6-4062-b369-a10032689908",
+            "sourceColumn": "l_receiptdate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_shipinstruct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "57fb1967-3107-47fd-87f8-a778741fb8d2",
+            "sourceColumn": "l_shipinstruct",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_shipmode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6c5f9e90-fafc-4737-953a-8e7dc21494bf",
+            "sourceColumn": "l_shipmode",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "l_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d679f64f-04e3-4c26-bc5b-24a5047bff28",
+            "sourceColumn": "l_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "bc80b9d2-9688-4084-95f4-3d3cf92e3232",
+        "partitions": [
+          {
+            "name": "lineitem",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(HostName, HttpPath, [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    lineitem_Table = tpch_Schema{[Name=\"lineitem\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    lineitem_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "part",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "p_partkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "43d389b1-83a2-4e73-be72-4018c014cb28",
+            "sourceColumn": "p_partkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "79cc65d8-cd0e-4664-b3f6-823949dd62b2",
+            "sourceColumn": "p_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_mfgr",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8c3e64f5-ea26-41e0-8469-367fab5950c6",
+            "sourceColumn": "p_mfgr",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_brand",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e2b16575-3e97-40af-85a6-3804ed483ead",
+            "sourceColumn": "p_brand",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "389ee861-9a3f-4089-a26d-0b9fd562d65b",
+            "sourceColumn": "p_type",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_size",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3b8142c5-041d-4081-8010-ae38634ac397",
+            "sourceColumn": "p_size",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_container",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a6556ec0-9273-4534-8fe1-3ba5e609551d",
+            "sourceColumn": "p_container",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_retailprice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f3f3c90c-c005-4149-8fa7-70d040620e07",
+            "sourceColumn": "p_retailprice",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "p_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "369ffed1-4f27-4d44-92cd-8d9678882576",
+            "sourceColumn": "p_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8d06cd6d-c852-4e60-8d4d-c749d0a72550",
+        "partitions": [
+          {
+            "name": "part",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(HostName, HttpPath, [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    part_Table = tpch_Schema{[Name=\"part\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    part_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "customer",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "c_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5da42df0-9442-4e93-96f6-f407cdbeab37",
+            "sourceColumn": "c_custkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "724954c9-70c0-47b2-b76e-8ae1a287cdba",
+            "sourceColumn": "c_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_address",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9019e29b-288a-4b13-960f-1e14d76c8481",
+            "sourceColumn": "c_address",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "034bb5c5-11ea-4c56-be84-ae406312da6f",
+            "sourceColumn": "c_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_phone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dc42dce4-881e-4a28-b7dd-4ed8f02880c6",
+            "sourceColumn": "c_phone",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_acctbal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2b25c357-425a-4088-8675-ff5bb8fc1ed3",
+            "sourceColumn": "c_acctbal",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "c_mktsegment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fdc2d1b1-40e7-4a1e-a291-a094bd2e2b52",
+            "sourceColumn": "c_mktsegment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d767c755-f8c9-41d0-8207-a1648cc16687",
+            "sourceColumn": "c_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "79e84e75-9d5d-4e5b-850d-bf16978066d1",
+        "partitions": [
+          {
+            "name": "customer",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(HostName, HttpPath, [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    customer_Table = tpch_Schema{[Name=\"customer\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    customer_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "region",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "r_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "81e3262c-4c40-4752-8d36-2cff0f230f0c",
+            "sourceColumn": "r_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f0f1d665-34a6-4063-bdf6-e17f1d8379f7",
+            "sourceColumn": "r_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "59b9f848-b4d8-4f42-a244-ea9c5454b01a",
+            "sourceColumn": "r_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c9697af8-8120-452b-86fe-d30eb38b5205",
+        "partitions": [
+          {
+            "name": "region",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(HostName, HttpPath, [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    region_Table = tpch_Schema{[Name=\"region\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    region_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "nation",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "n_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d31385c9-f7cf-427a-870b-7b9708dc1ade",
+            "sourceColumn": "n_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "21e5bf68-d8f7-4da9-8d9a-f2cb748b8c20",
+            "sourceColumn": "n_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "cead8136-30d9-40de-b7cc-cb189d53a233",
+            "sourceColumn": "n_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "310a507d-61dd-482d-b9a7-c4fb37befd00",
+            "sourceColumn": "n_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e144a950-66fe-401f-8938-ae096186d5fb",
+        "partitions": [
+          {
+            "name": "nation",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(HostName, HttpPath, [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    nation_Table = tpch_Schema{[Name=\"nation\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    nation_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

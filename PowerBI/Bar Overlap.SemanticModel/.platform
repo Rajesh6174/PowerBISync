@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Bar Overlap"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e4e12858-223e-4d9d-b4d5-53cef7c715d4"
+  }
+}

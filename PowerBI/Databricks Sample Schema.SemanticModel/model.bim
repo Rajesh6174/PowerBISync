@@ -1,0 +1,1854 @@
+{
+  "compatibilityLevel": 1564,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"orders_DQ\",\"customer_DQ\",\"nation_DQ\",\"region_DQ\",\"customer_Dual\",\"nation_Dual\",\"region_Dual\",\"customer_Import\",\"nation_Import\",\"region_Import\",\"ServerHostname\",\"HttpPath\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.138.782.0 (24.11)"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "ServerHostname",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"adb-1995897682434209.9.azuredatabricks.net\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "9c579051-964d-45af-b1b3-6e52ca8daf41"
+      },
+      {
+        "name": "HttpPath",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"/sql/1.0/warehouses/504e56048d1cc76b\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "65984d74-d61c-444c-9a2c-303aa15b5e6c"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "358fa16a-8e17-46fc-880a-ba15074c2979",
+        "fromColumn": "c_nationkey",
+        "fromTable": "customer_DQ",
+        "toColumn": "n_nationkey",
+        "toTable": "nation_DQ"
+      },
+      {
+        "name": "2c86ae3d-ccfc-4e83-8570-319afaa25218",
+        "fromColumn": "o_custkey",
+        "fromTable": "orders_DQ",
+        "toColumn": "c_custkey",
+        "toTable": "customer_DQ"
+      },
+      {
+        "name": "6f251635-50d1-4a9b-b4b0-9eef6734c6e4",
+        "fromColumn": "n_regionkey",
+        "fromTable": "nation_DQ",
+        "toColumn": "r_regionkey",
+        "toTable": "region_DQ"
+      },
+      {
+        "name": "4778a629-ccce-4de1-80a9-2432c8b08c1f",
+        "fromColumn": "n_regionkey",
+        "fromTable": "nation_Import",
+        "toColumn": "r_regionkey",
+        "toTable": "region_Import"
+      },
+      {
+        "name": "d9efa7f3-de3e-4c9e-9735-a4e9efd1442e",
+        "fromColumn": "c_nationkey",
+        "fromTable": "customer_Import",
+        "toColumn": "n_nationkey",
+        "toTable": "nation_Import"
+      },
+      {
+        "name": "4efe5855-e407-43ae-b936-9edc08ad190b",
+        "fromColumn": "n_regionkey",
+        "fromTable": "nation_Dual",
+        "toColumn": "r_regionkey",
+        "toTable": "region_Dual"
+      },
+      {
+        "name": "680eeb88-c537-44ea-b1be-3b905028817a",
+        "fromColumn": "c_nationkey",
+        "fromTable": "customer_Dual",
+        "toColumn": "n_nationkey",
+        "toTable": "nation_Dual"
+      },
+      {
+        "name": "bbec0cbd-a1c5-4da1-998f-76c8600e5f9a",
+        "fromColumn": "o_custkey",
+        "fromTable": "orders_DQ",
+        "toColumn": "c_custkey",
+        "toTable": "customer_Dual"
+      },
+      {
+        "name": "3a082540-3a0e-489a-b044-b51d99bd9126",
+        "fromColumn": "o_custkey",
+        "fromTable": "orders_DQ",
+        "toColumn": "c_custkey",
+        "toTable": "customer_Import"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "orders_DQ",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "o_orderkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a1f30f49-b5ba-42b6-9c53-632c25f5d6a8",
+            "sourceColumn": "o_orderkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "17021767-0535-49a2-bdd0-9822124f16a7",
+            "sourceColumn": "o_custkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_orderstatus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1d0ed6ae-9b80-4300-bd19-552a69d3bdfa",
+            "sourceColumn": "o_orderstatus",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_totalprice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2ff8ddde-d668-4319-b28c-935d6855daee",
+            "sourceColumn": "o_totalprice",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_orderdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "603d3400-6165-4430-b397-7c9519ed609b",
+            "sourceColumn": "o_orderdate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_orderpriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "96db5948-7316-497c-ac11-f4c9ef468dd9",
+            "sourceColumn": "o_orderpriority",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_clerk",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "03688ec2-c916-4d33-af45-60f45ed5d267",
+            "sourceColumn": "o_clerk",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_shippriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1cf1bbfc-f482-4225-b483-cde074a5d012",
+            "sourceColumn": "o_shippriority",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f56edcb7-c654-43dd-ad9e-990bb87e2e1b",
+            "sourceColumn": "o_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3ac807cd-e1fa-4de3-8976-0fc7210a2025",
+        "partitions": [
+          {
+            "name": "orders_DQ",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    orders_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "customer_DQ",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "c_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "40e6e3d2-c3c0-458d-80e3-3e311f1d3e40",
+            "sourceColumn": "c_custkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e0539b38-220f-4952-b2d3-f959ec941fee",
+            "sourceColumn": "c_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_address",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3092ccc1-e830-4186-af88-788a810aa18a",
+            "sourceColumn": "c_address",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "eb6b363d-a34d-40de-abd6-39861713ff48",
+            "sourceColumn": "c_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_phone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b6e14267-2f5b-4905-bb1d-c1b7d554f8a7",
+            "sourceColumn": "c_phone",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_acctbal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "563d04cd-d9e7-4692-8441-b535f4c31566",
+            "sourceColumn": "c_acctbal",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "c_mktsegment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "23ece738-be9d-4f02-9887-e910d8b1c621",
+            "sourceColumn": "c_mktsegment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6496222e-1e30-4ce1-8a61-31c43b7110fb",
+            "sourceColumn": "c_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "21b278f5-2035-4d2f-8973-662ce40fdf78",
+        "partitions": [
+          {
+            "name": "customer_DQ",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    customer_Table = tpch_Schema{[Name=\"customer\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    customer_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "nation_DQ",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "n_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8e1a138a-f53d-42c8-af3e-66912f6cb7f1",
+            "sourceColumn": "n_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2e093a3e-f2d1-4313-9678-dc49c7dd1e71",
+            "sourceColumn": "n_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4dd538eb-b5a8-4de7-8fd9-a85521ab3b10",
+            "sourceColumn": "n_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "08499f2a-a6f9-4546-8e66-5a3f7b57ebdb",
+            "sourceColumn": "n_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "17fb2fb8-8ce5-4e19-a780-a3eb15d5f023",
+        "partitions": [
+          {
+            "name": "nation_DQ",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    nation_Table = tpch_Schema{[Name=\"nation\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    nation_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "region_DQ",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "r_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d74c9b34-a680-4a11-b26e-5eca12ab0034",
+            "sourceColumn": "r_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bbb05882-9207-4a2f-8aba-26cc77bb24c4",
+            "sourceColumn": "r_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fd6f2e50-dd76-4893-a253-6470fdb1381b",
+            "sourceColumn": "r_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "541816da-e8a4-4454-969c-231ef339b3d2",
+        "partitions": [
+          {
+            "name": "region_DQ",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    region_Table = tpch_Schema{[Name=\"region\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    region_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "customer_Dual",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "c_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d96b88f3-b9ce-4a04-9cf1-944613c3ccb9",
+            "sourceColumn": "c_custkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "55fbad5f-f0a0-4b20-a75b-1b32ddae9563",
+            "sourceColumn": "c_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_address",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cf3ca75f-b487-44dc-bd35-fb0d7c646249",
+            "sourceColumn": "c_address",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9060d49b-cc1c-4380-8116-71036d0b9378",
+            "sourceColumn": "c_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_phone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "276df2d2-be43-423d-9db1-3b219dd2eff7",
+            "sourceColumn": "c_phone",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_acctbal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "99b6fcf8-0d05-46b8-88b8-5c427abfb549",
+            "sourceColumn": "c_acctbal",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "c_mktsegment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1e99d774-e19f-4ca2-86cc-b89f0f62b9d5",
+            "sourceColumn": "c_mktsegment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1c4e8d2e-35a4-4ef0-afee-2a635e873231",
+            "sourceColumn": "c_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "715422cf-c83c-4059-b8a7-2c8ae385ed27",
+        "partitions": [
+          {
+            "name": "customer_Dual",
+            "mode": "dual",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    customer_Table = tpch_Schema{[Name=\"customer\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    customer_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "nation_Dual",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "n_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "31c58617-856c-42e1-a4f5-9f6467a58658",
+            "sourceColumn": "n_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6d62b8c4-09a6-40a9-a26e-d34fda4b9386",
+            "sourceColumn": "n_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "543a2fbe-0e43-4f55-9594-efffe607ab31",
+            "sourceColumn": "n_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c1a6eefd-91a5-41bc-be57-f1458f52fc33",
+            "sourceColumn": "n_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c8d226d8-ee3a-4cb1-8d4a-282e465fb01a",
+        "partitions": [
+          {
+            "name": "nation_Dual",
+            "mode": "dual",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    nation_Table = tpch_Schema{[Name=\"nation\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    nation_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "region_Dual",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "r_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4873604e-124d-4294-ba83-47f3f248a6ab",
+            "sourceColumn": "r_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "627a0d9d-d69f-4193-a9af-9425db459d73",
+            "sourceColumn": "r_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c0ce33c8-5a10-4a74-b454-841a996a4817",
+            "sourceColumn": "r_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4f56d132-048b-48e6-a8bf-4205ca23e973",
+        "partitions": [
+          {
+            "name": "region_Dual",
+            "mode": "dual",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    region_Table = tpch_Schema{[Name=\"region\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    region_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "customer_Import",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "c_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "911981f0-d65f-4420-956d-0c82d1595976",
+            "sourceColumn": "c_custkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fc26764e-d619-49a2-acc1-6fd14741bea2",
+            "sourceColumn": "c_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_address",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f32e26fa-acca-43b8-a133-f6bf57792c3c",
+            "sourceColumn": "c_address",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8de5978a-b566-4322-8e12-735ca254c9b9",
+            "sourceColumn": "c_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_phone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2aa72bd5-6590-4873-aa01-bf8ba21eeb7c",
+            "sourceColumn": "c_phone",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_acctbal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "aaa53827-dda9-4814-bcf0-7d64499ff05e",
+            "sourceColumn": "c_acctbal",
+            "sourceProviderType": "decimal(18, 2)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "c_mktsegment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a0bdfd43-a64d-4925-acf0-b892eaa02663",
+            "sourceColumn": "c_mktsegment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "c_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bc28927a-8e5d-488d-b540-057d83f87d98",
+            "sourceColumn": "c_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e6f2a123-8c85-45a2-8023-97d83669a2fe",
+        "partitions": [
+          {
+            "name": "customer_Import",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    customer_Table = tpch_Schema{[Name=\"customer\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    customer_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "nation_Import",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "n_nationkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0e2e19ff-b69a-4a62-9396-334c95f57c64",
+            "sourceColumn": "n_nationkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "35435cce-0154-482d-8f9f-d507069b50f2",
+            "sourceColumn": "n_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7fc68a7a-9994-407f-a82e-9b8a93124806",
+            "sourceColumn": "n_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "n_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "38bc085c-86d4-47c0-a16c-bf7c571106bb",
+            "sourceColumn": "n_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "cc983870-06e6-4598-bf9a-7657eb600b43",
+        "partitions": [
+          {
+            "name": "nation_Import",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    nation_Table = tpch_Schema{[Name=\"nation\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    nation_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "region_Import",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "r_regionkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3f769454-f8f8-4a9c-8715-3122e7988bd7",
+            "sourceColumn": "r_regionkey",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ef9657bf-0340-4931-a6d2-c196846efce7",
+            "sourceColumn": "r_name",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "r_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0d561210-50bc-415b-a4a5-e35ea7d48cfd",
+            "sourceColumn": "r_comment",
+            "sourceProviderType": "nvarchar(65535)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "fb9e0bdc-37fe-4a2b-8c7f-50919aa69fa7",
+        "partitions": [
+          {
+            "name": "region_Import",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    region_Table = tpch_Schema{[Name=\"region\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    region_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_5540c2bb-231f-4c9f-abe0-03369e928c8e",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "b97a421f-1384-4818-a723-70c4c4a06f30",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "1158304b-66ed-4646-9aaa-8648c974a09d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "13b5a944-57e0-4b5e-b96d-e187a6a48cda",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "450b9575-fac9-40a1-a6f9-cbea9e09d7bb",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "c4ac9bea-baea-4dd6-a0f7-330c94eca150",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "2af40df8-d102-4b04-a933-bb50f3eea33e",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "6ba80faf-ad43-48cd-b741-7c34f1cbec78",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "d9673ea9-7b99-4c0e-a931-cecebfcf0652",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "3d523e57-d4e7-47e4-ac38-51082d953c6b",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "4515ac3e-7a1e-4131-90e3-410d6e8fe414",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "b7c0231b-93b4-431e-b774-f365ef03b079",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "2f98130e-5d38-4f63-8d0a-6055f87b91d9"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "51590367-0383-4d8d-9ea2-6fb4cc884377",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_5540c2bb-231f-4c9f-abe0-03369e928c8e",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "orders-non-partitioned",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "o_orderkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "sourceColumn": "o_orderkey",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "sourceColumn": "o_custkey",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_orderstatus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_orderstatus",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_totalprice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "sourceColumn": "o_totalprice",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_orderdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "sourceColumn": "o_orderdate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_orderpriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_orderpriority",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_clerk",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_clerk",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_shippriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "sourceColumn": "o_shippriority",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_comment",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "orders",
+            "dataView": "full",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data]",
+                "in",
+                "    orders_Table"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "orders-partitioned",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "o_orderkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "sourceColumn": "o_orderkey",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_custkey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "sourceColumn": "o_custkey",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_orderstatus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_orderstatus",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_totalprice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "sourceColumn": "o_totalprice",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_orderdate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "sourceColumn": "o_orderdate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_orderpriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_orderpriority",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_clerk",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_clerk",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "o_shippriority",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "sourceColumn": "o_shippriority",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "o_comment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "sourceColumn": "o_comment",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "orders - 1-URGENT",
+            "dataView": "full",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(orders_Table, each [o_orderpriority] = \"1-URGENT\")",
+                "in",
+                "    #\"Filtered Rows\""
+              ],
+              "type": "m"
+            }
+          },
+          {
+            "name": "orders - 2-HIGH",
+            "dataView": "full",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(orders_Table, each [o_orderpriority] = \"2-HIGH\")",
+                "in",
+                "    #\"Filtered Rows\""
+              ],
+              "type": "m"
+            }
+          },
+          {
+            "name": "orders - 3-MEDIUM",
+            "dataView": "full",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(orders_Table, each [o_orderpriority] = \"3-MEDIUM\")",
+                "in",
+                "    #\"Filtered Rows\""
+              ],
+              "type": "m"
+            }
+          },
+          {
+            "name": "orders - 4-NOT SPECIFIED",
+            "dataView": "full",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(orders_Table, each [o_orderpriority] = \"4-NOT SPECIFIED\")",
+                "in",
+                "    #\"Filtered Rows\""
+              ],
+              "type": "m"
+            }
+          },
+          {
+            "name": "orders - 5-LOW",
+            "dataView": "full",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Databricks.Catalogs(ServerHostname, HttpPath, null),",
+                "    samples_Database = Source{[Name=\"samples\",Kind=\"Database\"]}[Data],",
+                "    tpch_Schema = samples_Database{[Name=\"tpch\",Kind=\"Schema\"]}[Data],",
+                "    orders_Table = tpch_Schema{[Name=\"orders\",Kind=\"Table\"]}[Data],",
+                "    #\"Filtered Rows\" = Table.SelectRows(orders_Table, each [o_orderpriority] = \"5-LOW\")",
+                "in",
+                "    #\"Filtered Rows\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

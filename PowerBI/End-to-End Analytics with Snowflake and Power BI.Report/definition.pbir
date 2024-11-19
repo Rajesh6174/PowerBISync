@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../End-to-End Analytics with Snowflake and Power BI.SemanticModel"
+    },
+    "byConnection": null
+  }
+}
