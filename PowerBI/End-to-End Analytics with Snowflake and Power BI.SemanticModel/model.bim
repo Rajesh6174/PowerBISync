@@ -3124,11 +3124,11 @@
         ]
       },
       {
-        "name": "41037af9-a00d-4d29-bbdb-73e688b094fe",
+        "name": "b41ed44b-4fc4-4065-934e-ad8a727abe92",
         "annotations": [
           {
             "name": "activeFrequency",
-            "value": "9"
+            "value": "3"
           },
           {
             "name": "activeQueries",
@@ -3136,15 +3136,139 @@
           },
           {
             "name": "relativeGain(%)",
-            "value": "59.780040834193"
+            "value": "127.86084526244723"
           },
           {
             "name": "relativeLift(%)",
-            "value": "58.678320213633704"
+            "value": "2.3564317473527456"
           },
           {
             "name": "relativeSize(%)",
-            "value": "98.157042709932156"
+            "value": "1.8429658763133725"
+          },
+          {
+            "name": "estimatedCardinality(Krows)",
+            "value": "0.198"
+          },
+          {
+            "name": "avoidQueryHints",
+            "value": "false"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date_YEAR",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "YEAR",
+                "table": "Date"
+              }
+            },
+            "dataType": "string",
+            "isAvailableInMdx": false
+          },
+          {
+            "name": "Date_DAY_OF_WEEK",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "DAY_OF_WEEK",
+                "table": "Date"
+              }
+            },
+            "dataType": "double",
+            "isAvailableInMdx": false
+          },
+          {
+            "name": "Date_WEEKDAY",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "WEEKDAY",
+                "table": "Date"
+              }
+            },
+            "dataType": "string",
+            "isAvailableInMdx": false
+          },
+          {
+            "name": "Location_LOCATION_CITY",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "LOCATION_CITY",
+                "table": "Location"
+              }
+            },
+            "dataType": "string",
+            "isAvailableInMdx": false
+          },
+          {
+            "name": "Location_LOCATION_REGION",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "LOCATION_REGION",
+                "table": "Location"
+              }
+            },
+            "dataType": "string",
+            "isAvailableInMdx": false
+          },
+          {
+            "name": "Truck_TRUCK_BRAND_NAME",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "TRUCK_BRAND_NAME",
+                "table": "Truck"
+              }
+            },
+            "dataType": "string",
+            "isAvailableInMdx": false
+          },
+          {
+            "name": "6",
+            "alternateOf": {
+              "baseColumn": {
+                "column": "LINE_TOTAL",
+                "table": "Order Details"
+              },
+              "summarization": "sum"
+            },
+            "dataType": "double",
+            "isAvailableInMdx": false
+          }
+        ],
+        "isHidden": true,
+        "partitions": [
+          {
+            "name": "Partition",
+            "mode": "import",
+            "source": {
+              "type": "inferred"
+            }
+          }
+        ],
+        "systemManaged": true
+      },
+      {
+        "name": "0a0309d3-9123-464f-a716-6b355fbac8f6",
+        "annotations": [
+          {
+            "name": "activeFrequency",
+            "value": "4"
+          },
+          {
+            "name": "activeQueries",
+            "value": "3"
+          },
+          {
+            "name": "relativeGain(%)",
+            "value": "56.843939116467268"
+          },
+          {
+            "name": "relativeLift(%)",
+            "value": "55.796324715798427"
+          },
+          {
+            "name": "relativeSize(%)",
+            "value": "98.157034123686628"
           },
           {
             "name": "estimatedCardinality(Krows)",
@@ -3344,119 +3468,6 @@
           },
           {
             "name": "17",
-            "alternateOf": {
-              "baseColumn": {
-                "column": "LINE_TOTAL",
-                "table": "Order Details"
-              },
-              "summarization": "sum"
-            },
-            "dataType": "double",
-            "isAvailableInMdx": false
-          }
-        ],
-        "isHidden": true,
-        "partitions": [
-          {
-            "name": "Partition",
-            "mode": "import",
-            "source": {
-              "type": "inferred"
-            }
-          }
-        ],
-        "systemManaged": true
-      },
-      {
-        "name": "cd367d53-2373-4aa9-8c3e-0643300d7e50",
-        "annotations": [
-          {
-            "name": "activeFrequency",
-            "value": "6"
-          },
-          {
-            "name": "activeQueries",
-            "value": "2"
-          },
-          {
-            "name": "relativeGain(%)",
-            "value": "119.52526820970064"
-          },
-          {
-            "name": "relativeLift(%)",
-            "value": "2.2027996439438153"
-          },
-          {
-            "name": "relativeSize(%)",
-            "value": "1.8429572900678395"
-          },
-          {
-            "name": "estimatedCardinality(Krows)",
-            "value": "0.103"
-          },
-          {
-            "name": "avoidQueryHints",
-            "value": "false"
-          }
-        ],
-        "columns": [
-          {
-            "name": "Date_YEAR",
-            "alternateOf": {
-              "baseColumn": {
-                "column": "YEAR",
-                "table": "Date"
-              }
-            },
-            "dataType": "string",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "Date_DAY_OF_WEEK",
-            "alternateOf": {
-              "baseColumn": {
-                "column": "DAY_OF_WEEK",
-                "table": "Date"
-              }
-            },
-            "dataType": "double",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "Date_WEEKDAY",
-            "alternateOf": {
-              "baseColumn": {
-                "column": "WEEKDAY",
-                "table": "Date"
-              }
-            },
-            "dataType": "string",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "Location_LOCATION_CITY",
-            "alternateOf": {
-              "baseColumn": {
-                "column": "LOCATION_CITY",
-                "table": "Location"
-              }
-            },
-            "dataType": "string",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "Location_LOCATION_REGION",
-            "alternateOf": {
-              "baseColumn": {
-                "column": "LOCATION_REGION",
-                "table": "Location"
-              }
-            },
-            "dataType": "string",
-            "isAvailableInMdx": false
-          },
-          {
-            "name": "5",
             "alternateOf": {
               "baseColumn": {
                 "column": "LINE_TOTAL",
