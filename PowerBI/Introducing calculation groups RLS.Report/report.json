@@ -1,0 +1,318 @@
+{
+  "config": "{\"version\":\"5.37\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY19SU06\",\"version\":\"5.3\",\"type\":2}},\"activeSectionIndex\":5,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection7aa466687035663bafb6",
+      "config": "{}",
+      "name": "Pod"
+    },
+    {
+      "boundSection": "ReportSection87b662b0b457c2064754",
+      "config": "{}",
+      "name": "Pod1"
+    },
+    {
+      "boundSection": "ReportSectionf45812c52b495395e000",
+      "config": "{}",
+      "name": "Pod2"
+    },
+    {
+      "boundSection": "ReportSection9b831c1cd94ebe8c436d",
+      "config": "{}",
+      "name": "Pod3"
+    },
+    {
+      "boundSection": "ReportSection400d1372cdecd6a384a7",
+      "config": "{}",
+      "name": "Pod4"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY19SU06",
+            "path": "BaseThemes/CY19SU06.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9b4b0d31440a23e47b3b",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4c7695287afc037de8fc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":884.8915187376725,\"y\":183.03747534516765,\"z\":1,\"width\":395.1084812623274,\"height\":194.39842209072978,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\",\"NativeReferenceName\":\"Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 194.40,
+          "width": 395.11,
+          "x": 884.89,
+          "y": 183.04,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"6af8e6e57edef838fee5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.09861932938856,\"y\":0,\"z\":0,\"width\":1166.3905325443786,\"height\":695.542406311637,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Fiscal Year\"},{\"queryRef\":\"Date.Fiscal Month\"},{\"queryRef\":\"Sales.Sales Amount\"},{\"queryRef\":\"Time Intelligence.Time Calc\"},{\"queryRef\":\"Metric.Metric\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metric\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fiscal Month\"},\"Name\":\"Date.Fiscal Month\",\"NativeReferenceName\":\"Fiscal Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fiscal Year\"},\"Name\":\"Date.Fiscal Year\",\"NativeReferenceName\":\"Fiscal Year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"},\"Name\":\"Sales.Sales Amount\",\"NativeReferenceName\":\"Sales Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\",\"NativeReferenceName\":\"Time Calc\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Metric\"},\"Name\":\"Metric.Metric\",\"NativeReferenceName\":\"Metric\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fiscal Year\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"2328550acc5ff23d2fb1\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Metric\"}},\"Property\":\"Metric\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metric\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Metric\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Sales Amount'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 695.54,
+          "width": 1166.39,
+          "x": 10.10,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Time calc (original measure)",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection400d1372cdecd6a384a7",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4607bb15fe9e99edab2f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":78.78419452887539,\"z\":2000,\"width\":162.43161094224925,\"height\":179.93920972644378}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 179.94,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 78.78,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"66d7c2681228e9a4e1c9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.92111368909514,\"y\":629.7911832946636,\"z\":3000,\"width\":1025.707656612529,\"height\":90.20881670533643}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"This is the sample PBIX file containing all the examples of the following article:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"13.5pt\"}}]},{\"textRuns\":[{\"value\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.5pt\"},\"url\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 90.21,
+          "width": 1025.71,
+          "x": 253.92,
+          "y": 629.79,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"9b3dfd205ccb1e89eda2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":198.419452887538,\"y\":78.78419452887539,\"z\":0,\"width\":716.838905775076,\"height\":458.11550151975683}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Sales Amount\"}],\"Rows\":[{\"queryRef\":\"Date.Month\",\"active\":true}],\"Columns\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"},\"Name\":\"Sales.Sales Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"Date.Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Default'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 458.12,
+          "width": 716.84,
+          "x": 198.42,
+          "y": 78.78,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e87997ebfb2eed4a3045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":308.32826747720367,\"z\":1000,\"width\":162.43161094224925,\"height\":286.93009118541033}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 286.93,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 308.33,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Metric",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection7aa466687035663bafb6",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"091598abeed72564250f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":244.13373860182372,\"z\":2000,\"width\":162.43161094224925,\"height\":126.44376899696049}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Metric.Metric\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metric\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Metric\"},\"Name\":\"Metric.Metric\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metric\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Metric\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Margin'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 126.44,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 244.13,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"9b3dfd205ccb1e89eda2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":201.88274153592073,\"y\":117.32452518579687,\"z\":0,\"width\":948.1090008257639,\"height\":458.728323699422}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Sales Amount\"},{\"queryRef\":\"Sales.Sales Quantity\"}],\"Rows\":[{\"queryRef\":\"Date.Month\",\"active\":true},{\"queryRef\":\"Time Intelligence.Time Calc\"}],\"Columns\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"},\"Name\":\"Sales.Sales Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"Date.Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Quantity\"},\"Name\":\"Sales.Sales Quantity\",\"NativeReferenceName\":\"Sales Quantity\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\",\"NativeReferenceName\":\"Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Default'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 458.73,
+          "width": 948.11,
+          "x": 201.88,
+          "y": 117.32,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"de6714f78c53d1d87cbd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.92111368909514,\"y\":629.7911832946636,\"z\":3000,\"width\":1025.707656612529,\"height\":90.20881670533643}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"This is the sample PBIX file containing all the examples of the following article:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"13.5pt\"}}]},{\"textRuns\":[{\"value\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.5pt\"},\"url\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 90.21,
+          "width": 1025.71,
+          "x": 253.92,
+          "y": 629.79,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e87997ebfb2eed4a3045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":117.68996960486322,\"z\":1000,\"width\":162.43161094224925,\"height\":126.44376899696049}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'YTD'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 126.44,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 117.69,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Sales by Month",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection87b662b0b457c2064754",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4607bb15fe9e99edab2f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":78.78419452887539,\"z\":2000,\"width\":162.43161094224925,\"height\":179.93920972644378}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CY 2008'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 179.94,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 78.78,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"9b3dfd205ccb1e89eda2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":198.419452887538,\"y\":78.78419452887539,\"z\":0,\"width\":716.838905775076,\"height\":458.11550151975683}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Sales Amount\"}],\"Rows\":[{\"queryRef\":\"Date.Month\",\"active\":true}],\"Columns\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"},\"Name\":\"Sales.Sales Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"Date.Month\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Default'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 458.12,
+          "width": 716.84,
+          "x": 198.42,
+          "y": 78.78,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c40b82b0c64059e56f26\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.92111368909514,\"y\":629.7911832946636,\"z\":3000,\"width\":1025.707656612529,\"height\":90.20881670533643}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"This is the sample PBIX file containing all the examples of the following article:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"13.5pt\"}}]},{\"textRuns\":[{\"value\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.5pt\"},\"url\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 90.21,
+          "width": 1025.71,
+          "x": 253.92,
+          "y": 629.79,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e87997ebfb2eed4a3045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":308.32826747720367,\"z\":1000,\"width\":162.43161094224925,\"height\":286.93009118541033}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 286.93,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 308.33,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Time calc (SPLY)",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection9b831c1cd94ebe8c436d",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4607bb15fe9e99edab2f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":78.78419452887539,\"z\":2000,\"width\":162.43161094224925,\"height\":179.93920972644378}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 179.94,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 78.78,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"9b3dfd205ccb1e89eda2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":198.419452887538,\"y\":78.78419452887539,\"z\":0,\"width\":716.838905775076,\"height\":458.11550151975683}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Sales Amount\"}],\"Rows\":[{\"queryRef\":\"Date.Month\",\"active\":true}],\"Columns\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"},\"Name\":\"Sales.Sales Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"Date.Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Default'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 458.12,
+          "width": 716.84,
+          "x": 198.42,
+          "y": 78.78,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e434283c2d612182eff0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.92111368909514,\"y\":629.7911832946636,\"z\":3000,\"width\":1025.707656612529,\"height\":90.20881670533643}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"This is the sample PBIX file containing all the examples of the following article:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"13.5pt\"}}]},{\"textRuns\":[{\"value\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.5pt\"},\"url\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 90.21,
+          "width": 1025.71,
+          "x": 253.92,
+          "y": 629.79,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e87997ebfb2eed4a3045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":308.32826747720367,\"z\":1000,\"width\":162.43161094224925,\"height\":286.93009118541033}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'SPLY'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 286.93,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 308.33,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Time calc (YTD)",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionf45812c52b495395e000",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"4607bb15fe9e99edab2f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":78.78419452887539,\"z\":2000,\"width\":162.43161094224925,\"height\":179.93920972644378}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CY 2009'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 179.94,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 78.78,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"54d0d05c6d58ac1e1bc7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.92111368909514,\"y\":629.7911832946636,\"z\":3000,\"width\":1025.707656612529,\"height\":90.20881670533643}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"This is the sample PBIX file containing all the examples of the following article:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Segoe UI\",\"fontSize\":\"13.5pt\"}}]},{\"textRuns\":[{\"value\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.5pt\"},\"url\":\"https://www.sqlbi.com/articles/introducing-calculation-groups/\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 90.21,
+          "width": 1025.71,
+          "x": 253.92,
+          "y": 629.79,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"9b3dfd205ccb1e89eda2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":198.419452887538,\"y\":78.78419452887539,\"z\":0,\"width\":716.838905775076,\"height\":458.11550151975683}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Sales.Sales Amount\"}],\"Rows\":[{\"queryRef\":\"Date.Month\",\"active\":true}],\"Columns\":[{\"queryRef\":\"Date.Calendar Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sales\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"},\"Name\":\"Sales.Sales Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"},\"Name\":\"Date.Month\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Calendar Year\"},\"Name\":\"Date.Calendar Year\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Month\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"subTotals\":[{\"properties\":{\"rowSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"columnSubtotals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Default'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 458.12,
+          "width": 716.84,
+          "x": 198.42,
+          "y": 78.78,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e87997ebfb2eed4a3045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":308.32826747720367,\"z\":1000,\"width\":162.43161094224925,\"height\":286.93009118541033}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Time Intelligence.Time Calc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"},\"Name\":\"Time Intelligence.Time Calc\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Time Intelligence\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Time Calc\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'QTD'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 286.93,
+          "width": 162.43,
+          "x": 0.00,
+          "y": 308.33,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
